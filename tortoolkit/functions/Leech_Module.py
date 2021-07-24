@@ -469,7 +469,7 @@ async def handle_zips(path, is_zip, rmess, split=True):
                 shutil.rmtree(path)
             if os.path.isfile(path):
                 os.remove(path)
-            await rmess.edit(rmess.text + "\n\nZipping done. Now uploading.")
+            await rmess.edit(rmess.text + "\n\n**Zipping done. Now uploading.**")
             await clear_stuff(path)
             return zip_path
         except:
@@ -486,9 +486,7 @@ async def handle_ext_zip(path, rmess, omess):
     if password is not None:
         password = password[1]
     start = time.time()
-    await rmess.edit(
-        f"{rmess.text}\nTrying to Extract the archive with password: `{password}`"
-    )
+    await rmess.edit(f"{rmess.text}\n\n**Trying to Extract the archive..**")
     wrong_pwd = False
 
     while True:
@@ -497,7 +495,7 @@ async def handle_ext_zip(path, rmess, omess):
         else:
             if (time.time() - start) > 1200:
                 await rmess.edit(
-                    f"{rmess.text}\nExtract failed as no correct password was provided uploading as it is."
+                    f"{rmess.text}\n**Extract failed as no correct password was provided uploading as it is.**"
                 )
                 return False
 
