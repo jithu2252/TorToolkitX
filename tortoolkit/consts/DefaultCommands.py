@@ -1,5 +1,5 @@
 class Commands:
-    LEECH = "leech"
+    LEECH = "leech@troopttkbot"
     PURGE = "purge"
     PAUSEALL = "pauseall"
     RESUMEALL = "resumeall"
